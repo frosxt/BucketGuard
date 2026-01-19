@@ -58,5 +58,9 @@ dependencies {
 *   Java 21 or newer
 *   Gradle or Maven
 
+
+## Documentation
+Documentation is available on the [Wiki](https://github.com/frosxt/BucketGuard/wiki)
+
 ## License
 MIT License. See LICENSE.
