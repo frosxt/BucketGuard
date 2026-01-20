@@ -32,7 +32,7 @@ public interface KeyedRateLimiter<K> extends AutoCloseable {
      * @param key    the key, must not be null.
      * @param tokens number of tokens to acquire, must be >= 1.
      * @return a Permit indicating success or failure/retry-after.
-     * @throws IllegalArgumentException if key is null or tokens < 1.
+     * @throws IllegalArgumentException if key is null or tokens &lt; 1.
      */
     Permit tryAcquire(K key, long tokens);
 
@@ -52,7 +52,7 @@ public interface KeyedRateLimiter<K> extends AutoCloseable {
      * @param key    the key, must not be null.
      * @param tokens number of tokens to acquire, must be >= 1.
      * @return a granted Permit.
-     * @throws IllegalArgumentException if key is null or tokens < 1.
+     * @throws IllegalArgumentException if key is null or tokens &lt; 1.
      * @throws InterruptedException     if interrupted while waiting.
      */
     Permit acquire(K key, long tokens) throws InterruptedException;
@@ -80,7 +80,8 @@ public interface KeyedRateLimiter<K> extends AutoCloseable {
      * @param tokens   number of tokens to acquire, must be >= 1.
      * @param executor the executor to use for scheduling the completion.
      * @return a CompletionStage that completes with a granted Permit.
-     * @throws IllegalArgumentException if key is null, tokens < 1, or executor is
+     * @throws IllegalArgumentException if key is null, tokens &lt; 1, or executor
+     *                                  is
      *                                  invalid.
      */
     CompletionStage<Permit> acquireAsync(K key, long tokens, Executor executor);

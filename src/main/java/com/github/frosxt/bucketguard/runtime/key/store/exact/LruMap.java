@@ -1,5 +1,6 @@
 package com.github.frosxt.bucketguard.runtime.key.store.exact;
 
+import java.io.Serial;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
@@ -7,6 +8,8 @@ import java.util.Map;
  * Specialized LinkedHashMap for LRU access order.
  */
 public class LruMap<K> extends LinkedHashMap<K, StoreEntry<K>> {
+    @Serial
+    private static final long serialVersionUID = 1L;
 
     /**
      * Creates a new LruMap.

@@ -22,7 +22,7 @@ public interface RateLimiter {
      *
      * @param tokens number of tokens to acquire, must be >= 1.
      * @return a Permit indicating success or failure/retry-after.
-     * @throws IllegalArgumentException if tokens < 1.
+     * @throws IllegalArgumentException if tokens &lt; 1.
      */
     Permit tryAcquire(long tokens);
 
@@ -39,7 +39,7 @@ public interface RateLimiter {
      *
      * @param tokens number of tokens to acquire, must be >= 1.
      * @return a granted Permit.
-     * @throws IllegalArgumentException if tokens < 1.
+     * @throws IllegalArgumentException if tokens &lt; 1.
      * @throws InterruptedException     if interrupted while waiting.
      */
     Permit acquire(long tokens) throws InterruptedException;
@@ -65,7 +65,8 @@ public interface RateLimiter {
      * @param tokens   number of tokens
      * @param executor executor for async completion
      * @return completion stage
-     * @throws IllegalArgumentException if tokens < 1 or executor is not valid for
+     * @throws IllegalArgumentException if tokens &lt; 1 or executor is not valid
+     *                                  for
      *                                  the operation
      */
     CompletionStage<Permit> acquireAsync(long tokens, Executor executor);

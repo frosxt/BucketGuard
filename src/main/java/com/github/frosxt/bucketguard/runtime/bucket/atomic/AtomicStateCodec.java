@@ -18,7 +18,7 @@ public final class AtomicStateCodec {
     }
 
     @SuppressWarnings("unused")
-    private final long tat;
+    private volatile long tat;
 
     public AtomicStateCodec() {
         this.tat = 0;
